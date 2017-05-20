@@ -20,7 +20,7 @@
 <form action="" method="post">
 
     <textarea name="isi" rows="8" cols="80"></textarea>
-
+s
     <input type="submit">
   </form>
 <input type="submit" class=upload>
