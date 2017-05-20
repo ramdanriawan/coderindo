@@ -1,0 +1,23 @@
+DirectoryIndex halaman/isi/index.php
+
+
+RewriteEngine On
+
+RewriteRule  index/([1-9].*) halaman/isi/index.php?page=$1
+
+RewriteRule ^artikel/(.*)/(.*)$ halaman/isi/isi_artikel.php?reque=artikel&tag=$1&judul=$2
+
+
+RewriteRule ^artikel_terpopuler/([1-9])$ halaman/isi/artikel_terpopuler.php?page=$1
+RewriteRule ^artikel_terpopuler$ halaman/isi/artikel_terpopuler.php
+
+RewriteRule ^cari/(.*)/(.*) halaman/isi/cari.php?reque=cari&keywo=$1&page=$2
+RewriteRule ^cari/$ halaman/isi/cari.php
+
+RewriteRule ^admin/update$ halaman/admin/update.php
+RewriteRule ^admin/index$ halaman/admin/index.php
+RewriteRule ^admin/edit$ halaman/admin/edit.php
+
+RewriteRule request/(.*) request/request_handling.php
+
+ErrorDocument 404 /halaman/isi/error404.html

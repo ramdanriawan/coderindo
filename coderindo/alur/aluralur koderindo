@@ -1,0 +1,160 @@
+//ALUR KERJA HALAMAN
+header -> about   -> request_handling.php (request = about, incl "request4.php") -> about.php
+	-> contact -> request_handling.php (request = contact, incl "request4.php") -> contact.php
+	-> pencarian -> request_handling.php (request = cari, incl "request1.php") -> cari.php
+
+home	-> artikel terbaru -> request_handling.php (request = artikel, incl "request1.php") artikel.php?judul=judul&tag=tag -> artikel/kategori/judul-artkel
+	-> hot tread         -> request_handling.php (request = artikel_terpopuler, incl "request1.php") -> artikel/kategori/judul-artikel
+
+// footer	-> subcriptions -> request_handling.php (request = newsletter, incl "request2.php") -> notifikasi melayang berhasil menjadi langganan
+
+//artikel  -> paging                -> request_handling.php (request = page_artikel, incl "request3.php") -> artikel.php as  artikel/tag/judul-artikel/page=2
+	// -> post selanjutnya -> request_handling.php (request = artikel_terbaru, incl "") -> artikel.php as artikel/tag/judul-artikel
+	-> related post        -> request_handling.php (request = semua_artikel, incl "request1.php") -> artikel.php as  artikel/tag/judul artikel
+
+
+//ALUR KERJA FILE & CLASS
+request_handling.php -> (incl "autoload.php	")
+			-> request1.php -> class pencarian (jika request == cari) -> cari();
+					   -> class artikel	(jika request == semua_artikel) -> tampilin_semua();
+					   			(jika request == artikel) -> tampilkan();
+					   			(jika request == artikel_terpopuler) -> artikel_terpopuler();
+
+			// -> request2.php -> class newsletter (jika request == newsletter) -> newsletter();
+
+			// -> request3.php -> class paging (jika request == paging) -> page();
+
+			-> request4.php -> class profile (jika request == about) -> about();
+							     				     (jika request == contact) -> contact();
+
+//LIST METHODE PADA CLASS
+	1. CLASS KONEKSI
+	   // PROPERTY
+	      public $konek,
+
+	    //METHODE
+	    public static koneksi();
+
+	2. CLASS ARTIKEL
+	   //PROPERTY
+	     public $judul // pakai fungsi str replace untuk mengganti spasi dengan - (kemudian di halaman artikel ubah lagi jadi spasi untuk mencarinya di database), $isi, $limit, $query, $mulai, $batas, $sql, $row;
+
+	   //METHODE
+	   koneksi::koneksi();
+	   tampilkan();
+	   tampilkan_semua();
+	   artikel_terpopuler();
+	   artikel_terbaru();
+	   post_tag();
+
+
+	3. CLASS  NEWSLETTER
+	    public $email, $query
+
+	    koneksi::koneksi();
+	    newsletter();
+	    cek_inputan();
+
+	 4. CLASS PAGING
+	    public $query, $limit, $mulai, $batas
+
+	     koneksi::koneksi();
+
+	     public static page($sql, $mulai, $batas)
+	     {
+	     	//
+
+	     	return $total
+	     }
+
+
+	 5. CLASS PROFILE
+	      public $query, $data
+
+	      koneksi::koneksi()
+
+	      contact();
+	      about()
+
+	 6. CLASS PENCARIAN
+	      public $keywo, $query, $data;
+
+	      koneksi::koneksi();
+	      paging::page();
+
+	      tampilkan();
+
+	  7. CLASS ERROR
+	      public $code;
+
+	      $code = ["not_found" => "halaman tidak ditemukan"];
+
+//LIST QUERY
+1. HASIL PENCARIAN
+
+	- data : "SELECT * FROM artikel WHERE judul LIKE '%$keywo%' LIMIT $mulai, $batas"
+
+
+	//untuk mengatur paging
+	- jumlah : "SELECT SQL_CALC_FOUND_ROWS * WHERE judul LIKE '%$keywo%';
+	- hasil : "SELECT FOUND ROWS() as tota"
+
+2. DATA ARTIKEL
+
+	- data home : "SELECT * FROM artikel ORDER BY DESC LIMIT 5 "
+	- data hot thread : "SELECT * FROM artikel WHERE dilihat > 10 ORDER BY DESC LIMIT $mulai, $batas"
+
+	- satu artikel : "SELECT isi from artikel WHERE judul like '%$judul%'' AND tag like '%$tag%' LIMIT 1"
+	- post tag : "SELECT * FROM artikel WHERE tag like '%$tag%'"
+	- semua artikel : "SELECT * FROM artikel LIMIT $mulai, $batas"
+	- artikel terpopuler : "SELECT * FROM artikel WHERE dilihat > 10 ORDER BY DESC LIMIT 1"
+
+//untuk mengatur paging
+	- jumlah : "SELECT SQL_CALC_FOUND_ROWS * FROM artikel';
+	- hasil : "SELECT FOUND ROWS() as tota"up
+
+3. BIODATA
+
+	- profile penulis : "SELECT * FROM penulis"
+	- deskripsi situs : "SELECT * FROM deskripsi"
+
+
+//HTACCESS
+	DirectoryIndex /project/coderindo
+
+	RewriteEngine On
+	RewriteRule /about /project/coderindo/halaman/about.php
+	RewriteRule /contact /project/coderindo/halaman/contact.php
+	RewriteRule /(.*)/(.*) /project/coderindo/halaman/artikel.php?judul=$1&tag=$2
+	RewriteRule /cari/(.*)/(.*) /project/coderindo/halaman/cari.php?query=$1
+
+//upload foto
+database :
+- buat nama folder dengan tag dari judul artikel
+- buat nama folder dengan judul artikel
+- isi dengan nama gambar
+- isi database : id, nama file, di_upload, url, alt, title, tag
+
+	//alur upload foto
+	- upload foto - ajax request(request3.php) = upload
+	- muncul notifikasi berhasil jika berhasil menambah foto
+
+		//dihalaman update artikel
+			- button tambah foto - ajax request(request3.php)
+			- muncul list foto yang sudah di upload
+			- ketika di klik akan muncul link foto di akhir baris isi artikel
+
+//class
+	upload foto
+	- upload
+		- koneksi
+		- insert into upload foto
+		- return status : sukses / gagal
+
+		tampilkan semua
+		- koneksi
+		- select * from foto
+
+	- pilih
+		- koneksi
+	 	- select * from foto where judul = judul
