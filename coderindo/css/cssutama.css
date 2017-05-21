@@ -11,7 +11,7 @@ html,body {
 }
 
 a:link,hover,visited {
-	text-decoration:none;	
+	text-decoration:none;
 }
 
 #main-header {
@@ -98,7 +98,7 @@ a:link,hover,visited {
 #navbar-wrapper {
 	width:100%;
 	height:30px;
-	background-color:#626262;	
+	background-color:#626262;
 }
 
 #navbar-bottom {
@@ -178,13 +178,13 @@ form {
 	height:150px;
 	padding:10px;
 	margin:15px 20px;
-	border-bottom:1px solid #000;	
+	border-bottom:1px solid #000;
 	float:left;
 	overflow:hidden;
 }
 
 .post-homepage h2 {
-	max-height:25px;	
+	max-height:25px;
 	overflow:hidden;
 }
 .post-homepage h2 a{
@@ -214,19 +214,19 @@ form {
 	font-size:13px;
 	text-decoration:none;
 	text-align:center;
-	float:left;	
+	float:left;
 }
 
 .post-preview {
 	font-family:calibri;
 	font-size:13px;
 	text-align:justify;
-	clear:both;	
+	clear:both;
 }
 
 .read-more {
 	float:right;
-	clear:both;	
+	clear:both;
 	margin-top:10px;
 }
 
@@ -238,12 +238,12 @@ form {
 	padding:4px 12px 5px 2px;
 	background:url(/gambar/readmore.png);
 	background-position:right;
-	background-repeat:no-repeat;	
+	background-repeat:no-repeat;
 }
 
 #page-home-artikel {
-	width:300px;	
-	text-align:center;	
+	width:300px;
+	text-align:center;
 }
 
 #page-home-artikel a{
@@ -258,12 +258,12 @@ form {
 }
 
 #page-home-artikel a:hover{
-	background:#626262;	
+	background:#626262;
 }
 
 #cleft-wrapper {
 	width:500px;
-	float:left;	
+	float:left;
 	padding-bottom:20px;
 }
 
@@ -281,7 +281,7 @@ form {
 	position:relative;
 	font-family:Calibri;
 	font-size:13px;
-		
+
 }
 
 #post-box:after{
@@ -315,7 +315,7 @@ form {
 
 #label-container {
 	width:120px;
-	float:left;	
+	float:left;
 	margin:0 20px;
 }
 
@@ -341,7 +341,7 @@ form {
 .label-list li a {
 	text-decoration:none;
 	font-family:coolvetica;
-	font-size:15px;	
+	font-size:15px;
 	color:#000;
 }
 
@@ -362,7 +362,7 @@ form {
 .related-list li a {
 	text-decoration:none;
 	font-family:Calibri;
-	font-size:14px;	
+	font-size:14px;
 	font-weight:bold;
 	color:#000;
 }
@@ -373,12 +373,12 @@ form {
 
 #sidebar-wrapper {
 	width:300px;
-	float:right;	
+	float:right;
 }
 
 #author-wrapper {
 	background:#c7c5c5;
-	padding:5px;	
+	padding:5px;
 	font-family:Calibri;
 }
 
@@ -411,7 +411,7 @@ form {
 
 #post-next-prev {
 	clear:both;
-	width:100%;	
+	width:100%;
 	margin: 15px 0;
 	padding:10px 0;
 	background:url('/gambar/border-line.png');
@@ -448,14 +448,14 @@ form {
 	clear:both;
 }
 #footer-container {
-	width:960px;	
+	width:960px;
 }
 
 #about-footer {
 	width:280px;
 	height:200px;
 	float:left;
-	border-right:2px solid #626262;	
+	border-right:2px solid #626262;
 	margin:10px 0;
 	padding:10px
 }
@@ -464,7 +464,7 @@ form {
 	width:230px;
 	height:200px;
 	float:left;
-	border-right:2px solid #626262;	
+	border-right:2px solid #626262;
 	margin:10px 0;
 	padding:10px;
 }
@@ -472,7 +472,7 @@ form {
 #subscription-box {
 	width:320px;
 	height:200px;
-	float:right;	
+	float:right;
 	margin:10px 0;
 	padding:10px 30px;
 }
@@ -480,13 +480,13 @@ form {
 .titlefoot1 {
 	font-family:Haettenschweiler;
 	font-size:50px;
-	color:#f1191d;	
+	color:#f1191d;
 }
 
 .titlefoot2 {
 	font-family:Haettenschweiler;
 	font-size:50px;
-	color:#fff;		
+	color:#fff;
 }
 
 .text-foot {
@@ -503,7 +503,7 @@ form {
 	color:#f1191d;
 	background:url(/gambar/subscript.png) no-repeat left;
 	padding-left:40px;
-		
+
 }
 
 
@@ -542,7 +542,7 @@ form {
 #nav-foot li a {
 	text-decoration:none;
 	font-family:coolvetica;
-	font-size:18px;	
+	font-size:18px;
 	color:#bcbcbc;
 }
 
@@ -558,7 +558,7 @@ form {
 	font-family:calibri;
 	font-size:14px;
 	font-weight:bold;
-	color:#000;	
+	color:#000;
 	bottom:0px;
 	clear:both;
 }

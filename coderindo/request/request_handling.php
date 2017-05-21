@@ -19,8 +19,8 @@ if(in_array($reque, $reque_artikel))
 	$tag = $_GET["tag"];
 
 
-	$mulai = ($page * 2) - 1;
-	$batas =  2;
+	$mulai = ($page * 4) - 1;
+	$batas =  4;
 
 	if ($reque == "artikel_terpopuler")
 	{
