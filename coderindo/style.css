@@ -1,0 +1,136 @@
+* {
+  margin: 0px auto;
+
+}
+
+body{
+  background: #C9CFD1;
+}
+
+#header{
+  width: 100%;
+  height: 60px;
+  background: #0774C3;
+  position: fixed;
+}
+
+#pencarian{
+  float: right;
+}
+
+.cari, .button{
+  height: 20px;
+  display: inline-block;
+}
+
+.cari{
+  margin: 10px 0px;
+  text-align: center;
+  border-radius: 25px 0 0 25px;
+}
+
+.cari:focus{
+  color: #07437C;
+}
+
+.button{
+  margin: 20px 20px 20px 0px;
+  background-color: transparent;
+  border-radius: 0 25px 25px 0;
+}
+
+.menu{
+  background: #07437C;
+  height: 210px auto;
+  padding-left: 10px;
+  padding-top: 60px;
+}
+
+.menu>li{
+  display: inline;
+}
+
+.menu>li>a{
+  height: 50px;
+
+  padding: 0px 10px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 2px;
+  margin: 10px 5px 10px 0px;
+  display: inline-block;
+  background: #083775;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  border-left: 1px solid black;
+}
+
+a{
+  text-decoration: none;
+  font-size: 20px;
+  color: #0774C3;
+}
+
+a:visited{
+  background: black;
+}
+
+.menu>li>a:hover{
+  background: black;
+}
+
+.menu>li>a:visited{
+  background: black;
+}
+
+#container{
+  width: 100% auto;
+  height: 100% auto;
+  margin: 20px 10px 20px 10px;
+}
+
+.content, .sidebar{
+  box-sizing: padding-box;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.content{
+  width: 70%;
+
+  background: white;
+  float: left;
+  border-left: 1px solid black;
+  padding: 20px;
+}
+
+.sidebar{
+  width: 20%;
+  background: white;
+  float: right;
+}
+
+.judul{
+  text-align: center;
+  margin: 10px;
+}
+
+.data-artikel{
+  margin-bottom: 20px;
+}
+
+h5.tag{
+  text-decoration: underline;
+  float: left;
+}
+h5.tanggal{
+  float: right;
+}
+
+#footer{
+  width: 100%;
+  height: 210px;
+  background: #07437C;
+  clear: both;
+}
