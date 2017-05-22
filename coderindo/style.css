@@ -134,3 +134,30 @@ h5.tanggal{
   background: #07437C;
   clear: both;
 }
+
+.subscribe{
+  float: right;
+  height: 100%;
+}
+
+.input_subscribe, .button_subscribe{
+display: inline-block;
+height: 50px;
+}
+
+.button_subscribe{
+
+  margin: 80px 20px 80px 0;
+  background-color: transparent;
+}
+
+.input_subscribe{
+  margin: 80px 0 80px 0;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #07437C;
+}
+
+#test_script .cek{
+  background: green;
+}
